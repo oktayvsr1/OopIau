@@ -15,6 +15,8 @@ namespace Week6
         List<Company> companies = new List<Company>();
         public string title { get; set; }
 
+        
+
         public string getString(string message)
         {
             Console.WriteLine(message);
@@ -78,7 +80,7 @@ namespace Week6
             //    }
             //}
 
-            companies.ForEach(c => c.buses.Find(b => b.busId =).addPassengers(passenger));
+            companies.ForEach(c => c.buses.Find(b => b.busId ==busId ).addPassengers(passenger));
 
 
             Console.WriteLine("New passenger added with this "+passenger.passengerId+" "+passenger.name+" "+passenger.surname);

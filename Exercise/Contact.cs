@@ -4,19 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Week6
+namespace Exercise
 {
-    public class Passenger
+    public class Contact
     {
-
-        public int passengerId { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
-        public Ticket ticket { get; set; }
-        public void setTicket(Ticket t)
-        {
-            ticket = t;
-        }
+        public List<int> Numbers { get; set; }
+        public string city { get; set; }
+
         
     }
 }
