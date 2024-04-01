@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -58,16 +59,16 @@ namespace Exercise2
         void newPatients(int doctorId)
         {
             Patient patient = new Patient(getInteger("Patient Id? "), getString("Patient name? "), getString("Patient surname? "));
-            foreach (Department department in departments)
-            {
-                foreach (Doctor doctor in department.doctors)
-                {
-                    if (doctorId == doctor.Id)
-                    {
-                        doctor.patients.Add(patient);
-                    }
-                }
-            }
+            //foreach (Department department in departments)
+            //{
+            //    foreach (Doctor doctor in department.doctors)
+            //    {
+            //        if (doctorId == doctor.Id)
+            //        {
+            //            doctor.patients.Add(patient);
+            //        }
+            //    }
+            //}
 
             departments.ForEach(d => { d.doctors.Find(doctor => doctor.Id == doctorId).patients.Add(patient); }) ;
         }
@@ -84,13 +85,13 @@ namespace Exercise2
 
         void getDepartment(int deptId)
         {
-            foreach(Department department in departments)
-            {
-                if(deptId == department.Id)
-                {
-                    Console.WriteLine(department.Title + " " + department.Id + " " + department.City);
-                }
-            }
+            //foreach(Department department in departments)
+            //{
+            //    if(deptId == department.Id)
+            //    {
+            //        Console.WriteLine(department.Title + " " + department.Id + " " + department.City);
+            //    }
+            //}
 
             departments.FindAll(d => d.Id == deptId).ForEach(d =>
             {
@@ -101,63 +102,69 @@ namespace Exercise2
 
         void getDoctors(int deptId)
         {
-            foreach(Department department in departments)
-            {
-                if(deptId == department.Id)
-                {
-                    foreach(Doctor doctor in department.doctors)
-                    {
-                        Console.WriteLine(doctor.Name+" "+doctor.Surname+" "+doctor.Id);
-                    }
-                }
-            }
+            //foreach(Department department in departments)
+            //{
+            //    if(deptId == department.Id)
+            //    {
+            //        foreach(Doctor doctor in department.doctors)
+            //        {
+            //            Console.WriteLine(doctor.Name+" "+doctor.Surname+" "+doctor.Id);
+            //        }
+            //    }
+            //}
+            departments.Find(d => d.Id == deptId).doctors.ForEach(c=> Console.WriteLine(c.Name + " " + c.Surname + " " + c.Id));
         }
 
         void getDoctor(int doctorId)
         {
-            foreach(Department department in departments)
-            {
-                foreach(Doctor doctor in department.doctors)
-                {
-                    if(doctorId == doctor.Id)
-                    {
-                        Console.WriteLine(doctor.Name + " " + doctor.Surname + " " + doctor.Id);
-                    }
-                }
-            }
+            //foreach(Department department in departments)
+            //{
+            //    foreach(Doctor doctor in department.doctors)
+            //    {
+            //        if(doctorId == doctor.Id)
+            //        {
+            //            Console.WriteLine(doctor.Name + " " + doctor.Surname + " " + doctor.Id);
+            //        }
+            //    }
+            //}
+
+            departments.ForEach(d=>d.doctors.FindAll(c=>c.Id==doctorId).ForEach(c=> Console.WriteLine(c.Name + " " + c.Surname + " " + c.Id)));
         }
 
         void getPatients()
         {
-            foreach(Department department in departments)
-            {
-                foreach(Doctor doctor in department.doctors)
-                {
-                    foreach(Patient patient in doctor.patients)
-                    {
-                        Console.WriteLine(patient.Name+" "+patient.Surname+" "+patient.Id);
-                    }
-                }
-            }
+            //foreach(Department department in departments)
+            //{
+            //    foreach(Doctor doctor in department.doctors)
+            //    {
+            //        foreach(Patient patient in doctor.patients)
+            //        {
+            //            Console.WriteLine(patient.Name+" "+patient.Surname+" "+patient.Id);
+            //        }
+            //    }
+            //}
+            departments.ForEach(d => d.doctors.ForEach(c => c.patients.ForEach(p=> Console.WriteLine(p.Name + " " + p.Surname + " " + p.Id))));
         }
 
         void getPatients(int deptId)
         {
-            foreach(Department department in departments)
-            {
-                if (deptId == department.Id)
-                {
-                    Console.WriteLine(department.Id+" "+department.Title+" "+department.City);
-                    foreach (Doctor doctor in department.doctors)
-                    {
-                        Console.WriteLine(doctor.Name+" "+doctor.Surname+" "+doctor.Id);
-                        foreach (Patient patient in doctor.patients)
-                        {
-                            Console.WriteLine(patient.Name + " " + patient.Surname + " " + patient.Id);
-                        }
-                    }
-                }
-            }
+            //foreach(Department department in departments)
+            //{
+            //    if (deptId == department.Id)
+            //    {
+            //        Console.WriteLine(department.Id+" "+department.Title+" "+department.City);
+            //        foreach (Doctor doctor in department.doctors)
+            //        {
+            //            Console.WriteLine(doctor.Name+" "+doctor.Surname+" "+doctor.Id);
+            //            foreach (Patient patient in doctor.patients)
+            //            {
+            //                Console.WriteLine(patient.Name + " " + patient.Surname + " " + patient.Id);
+            //            }
+            //        }
+            //    }
+            //}
+
+            departments.Find(d => d.Id == deptId).doctors.ForEach(c => c.patients.ForEach(p=> Console.WriteLine(p.Name + " " + p.Surname + " " + p.Id)));
         }
 
 
