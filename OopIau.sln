@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week12", "Week12\Week12.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week12.2", "Week12.2\Week12.2.csproj", "{430AD8EA-BA6E-4367-BB54-7B9B5F27B69A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastOne", "LastOne\LastOne.csproj", "{7F72AF93-FFEA-45C7-A830-60C7F4FEA2E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LastOne", "LastOne\LastOne.csproj", "{7F72AF93-FFEA-45C7-A830-60C7F4FEA2E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Car", "Car\Car.csproj", "{C5B54695-C105-4349-8C00-1929FDC35293}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{7F72AF93-FFEA-45C7-A830-60C7F4FEA2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F72AF93-FFEA-45C7-A830-60C7F4FEA2E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F72AF93-FFEA-45C7-A830-60C7F4FEA2E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5B54695-C105-4349-8C00-1929FDC35293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5B54695-C105-4349-8C00-1929FDC35293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5B54695-C105-4349-8C00-1929FDC35293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5B54695-C105-4349-8C00-1929FDC35293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

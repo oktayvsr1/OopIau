@@ -12,8 +12,9 @@ namespace LastOne
     {
         public SqlConnection getConencted()
         {
-            string conString = @"Server=OKTAY\SQLEXPRESS03;Database=AvsarCar;Trusted_Connection=true;TrustServerCertificate=true";
-            SqlConnection connection = new SqlConnection();
+            string conString = @"Server=OKTAY\SQLEXPRESS03;Database=University;Trusted_Connection=true;TrustServerCertificate=true;";
+
+            SqlConnection connection = new SqlConnection(conString);
             connection.Open();
             return connection;
         }
@@ -75,6 +76,7 @@ namespace LastOne
             SqlConnection connection =getConencted();
             string query = "update students set name=@name , surname=@surname where stuId=@stuId";
             SqlCommand cmd= new SqlCommand(query,connection);
+            cmd.Parameters.AddWithValue("@stuId",stuId);
             cmd.Parameters.AddWithValue("@name",name);
             cmd.Parameters.AddWithValue("@surname",surname);
             cmd.ExecuteNonQuery ();
